@@ -10,6 +10,10 @@ RUN npm run build
 # Step 2: Build Phase
 FROM nginx
 
+# normally this is just documentation for developers (doesn't actually open port)
+# however, elastic beanstalk uses this to know that it should open port 80
+EXPOSE 80
+
 # where nginx expects static content to be
 WORKDIR /usr/share/nginx/html
 
